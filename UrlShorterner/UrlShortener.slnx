@@ -1,0 +1,11 @@
+<Solution>
+  <Project Path="UrlShortener.Contracts/UrlShortener.Contracts.csproj" />
+  <Project Path="UrlShortener.RedirectService/UrlShortener.RedirectService.csproj" />
+  <Project Path="UrlShortener.Worker/UrlShortener.Worker.csproj" />
+  <Project Path="UrlShorterner.AppHost/UrlShortener.AppHost.csproj" />
+  <Project Path="UrlShorterner.Application/UrlShortener.Application.csproj" />
+  <Project Path="UrlShorterner.Domain/UrlShortener.Domain.csproj" />
+  <Project Path="UrlShorterner.Infrastructure/UrlShortener.Infrastructure.csproj" />
+  <Project Path="UrlShorterner.ServiceDefaults/UrlShortener.ServiceDefaults.csproj" />
+  <Project Path="UrlShorterner/UrlShortener.csproj" />
+</Solution>

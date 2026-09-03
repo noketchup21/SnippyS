@@ -1,0 +1,30 @@
+# .NET
+**/bin/
+**/obj/
+.vs/
+*.user
+*.suo
+*.tmp
+*.cache
+
+# local config / secrets
+**/appsettings.Development.json
+**/appsettings.Local.json
+UrlShorterner/UrlShortener.RedirectService/appsettings.json
+UrlShorterner/UrlShortener.Worker/appsettings.json
+.env
+.env.*
+
+# frontend
+**/node_modules/
+**/.pnpm-store/
+**/dist/
+**/build/
+.vite/
+coverage/
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

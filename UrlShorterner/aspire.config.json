@@ -1,0 +1,5 @@
+{
+  "appHost": {
+    "path": "UrlShorterner.AppHost/UrlShorterner.AppHost.csproj"
+  }
+}
