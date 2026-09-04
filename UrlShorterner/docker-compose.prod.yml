@@ -1,0 +1,53 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: UrlShorterner/Dockerfile
+    restart: unless-stopped
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__urlshortenerdb=${DB_CONNECTION_STRING}
+      - ConnectionStrings__redis=${REDIS_CONNECTION_STRING}
+      - Jwt__Key=${JWT_KEY}
+      - Jwt__Issuer=${JWT_ISSUER}
+      - PayOS__ClientId=${PAYOS_CLIENT_ID}
+      - PayOS__ApiKey=${PAYOS_API_KEY}
+      - PayOS__ChecksumKey=${PAYOS_CHECKSUM_KEY}
+      - VirusTotal__ApiKey=${VIRUSTOTAL_API_KEY}
+      - Turnstile__SecretKey=${TURNSTILE_SECRET_KEY}
+      - Smtp__Host=${SMTP_HOST}
+      - Smtp__Port=${SMTP_PORT}
+      - Smtp__Username=${SMTP_USERNAME}
+      - Smtp__Password=${SMTP_PASSWORD}
+      - Smtp__FromEmail=${SMTP_FROM_EMAIL}
+      - Cors__AllowedOrigin=${FRONTEND_URL}
+    expose:
+      - "8080"
+
+  redirect:
+    build:
+      context: .
+      dockerfile: UrlShortener.RedirectService/Dockerfile
+    restart: unless-stopped
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__urlshortenerdb=${DB_CONNECTION_STRING}
+      - ConnectionStrings__redis=${REDIS_CONNECTION_STRING}
+      - Turnstile__SiteKey=${TURNSTILE_SITE_KEY}
+      - Turnstile__SecretKey=${TURNSTILE_SECRET_KEY}
+    expose:
+      - "8080"
+
+  worker:
+    build:
+      context: .
+      dockerfile: UrlShortener.Worker/Dockerfile
+    restart: unless-stopped
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__urlshortenerdb=${DB_CONNECTION_STRING}
+      - ConnectionStrings__redis=${REDIS_CONNECTION_STRING}
+      - VirusTotal__ApiKey=${VIRUSTOTAL_API_KEY}
+      - Groq__ApiKey=${GROQ_API_KEY}
