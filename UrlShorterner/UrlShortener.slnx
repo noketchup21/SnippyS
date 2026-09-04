@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="docker-compose.prod.yml" />
+  </Folder>
   <Project Path="UrlShortener.Contracts/UrlShortener.Contracts.csproj" />
   <Project Path="UrlShortener.RedirectService/UrlShortener.RedirectService.csproj" />
   <Project Path="UrlShortener.Worker/UrlShortener.Worker.csproj" />
