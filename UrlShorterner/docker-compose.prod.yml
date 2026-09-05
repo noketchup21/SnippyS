@@ -22,6 +22,7 @@ services:
       - Smtp__Password=${SMTP_PASSWORD}
       - Smtp__FromEmail=${SMTP_FROM_EMAIL}
       - Cors__AllowedOrigin=${FRONTEND_URL}
+      - Stripe__SecretKey=${STRIPE_SECRET_KEY}
     expose:
       - "8080"
 

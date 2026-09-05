@@ -10,8 +10,6 @@
 # local config / secrets
 **/appsettings.Development.json
 **/appsettings.Local.json
-UrlShorterner/UrlShortener.RedirectService/appsettings.json
-UrlShorterner/UrlShortener.Worker/appsettings.json
 .env
 .env.*
 
