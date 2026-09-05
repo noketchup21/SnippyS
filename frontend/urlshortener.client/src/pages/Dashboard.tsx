@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 const PAGE_SIZE = 10;
 
 export function Dashboard() {
-  const { user } = useAuth();
+  const { user: _user } = useAuth(); // only if you want to silence without deleting
   const [links, setLinks] = useState<LinkSummary[] | null>(null);
   const [totalCount, setTotalCount] = useState(0);
   const [page, setPage] = useState(1);

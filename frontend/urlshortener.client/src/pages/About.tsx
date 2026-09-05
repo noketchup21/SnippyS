@@ -1,6 +1,6 @@
 import { Navbar } from '../components/Navbar';
 import { Card } from '../components/ui/Card';
-import { Code2, Server, Smartphone, GraduationCap, Sparkles, ExternalLink } from 'lucide-react';
+import { Code2, Server, Smartphone, GraduationCap, ExternalLink } from 'lucide-react';
 
 export function About() {
   return (

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { linksApi } from '../api/links';
 import type { BulkCreateLinkResultItem } from '../api/types';
 import { buildShortUrl } from '../api/config';
