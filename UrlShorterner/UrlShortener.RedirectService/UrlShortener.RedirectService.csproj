@@ -23,7 +23,6 @@
     <ProjectReference Include="..\UrlShorterner.Domain\UrlShortener.Domain.csproj" />
     <ProjectReference Include="..\UrlShorterner.Infrastructure\UrlShortener.Infrastructure.csproj" />
     <ProjectReference Include="..\UrlShorterner.ServiceDefaults\UrlShortener.ServiceDefaults.csproj" />
-    <ProjectReference Include="..\UrlShorterner\UrlShortener.csproj" />
   </ItemGroup>
 
 </Project>
