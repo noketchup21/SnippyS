@@ -23,8 +23,8 @@ services:
       - Smtp__FromEmail=${SMTP_FROM_EMAIL}
       - Cors__AllowedOrigin=${FRONTEND_URL}
       - Stripe__SecretKey=${STRIPE_SECRET_KEY}
-    expose:
-      - "8080"
+    ports:
+      - "127.0.0.1:5289:8080"
 
   redirect:
     build:
@@ -38,11 +38,11 @@ services:
       - ConnectionStrings__redis=${REDIS_CONNECTION_STRING}
       - Turnstile__SiteKey=${TURNSTILE_SITE_KEY}
       - Turnstile__SecretKey=${TURNSTILE_SECRET_KEY}
-    expose:
-      - "8080"
+    ports:
+      - "127.0.0.1:5290:8080"
 
   worker:
-    build:
+    build:  
       context: .
       dockerfile: UrlShortener.Worker/Dockerfile
     restart: unless-stopped
